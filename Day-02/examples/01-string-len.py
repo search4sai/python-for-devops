@@ -1,3 +1,4 @@
 text = "Python is awesome"
-length = len(text)
-print("Length of the string:", length)
+num = 6.7
+# length = len(num)
+print("Length of the string:", len(text))
