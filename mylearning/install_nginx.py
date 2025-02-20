@@ -1,8 +1,13 @@
 import os
 import subprocess
-from install_apache import IndexUpdater, ApacheOperations
+from install_apache import IndexUpdater, ApacheOperations, SystemOperations
 
 def install_nginx():
+    system_ops = SystemOperations()
+    
+    if not system_ops.check_sudo():
+        return
+    
     try:
         # Update the package list
         subprocess.run(['sudo', 'apt-get', 'update'], check=True)
